@@ -1,0 +1,33 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+
+@app.route("/about")
+def about():
+    return """
+    <h1>About the UI Redesign</h1>
+    <p>
+        This project demonstrates a redesigned website with improved
+        usability, visual hierarchy and responsive design.
+    </p>
+    <a href="/">Back to Home</a>
+    """
+
+
+@app.route("/contact")
+def contact():
+    return """
+    <h1>Contact</h1>
+    <p>Email: support@uidesign.com</p>
+    <a href="/">Back to Home</a>
+    """
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
